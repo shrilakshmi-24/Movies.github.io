@@ -1981,7 +1981,7 @@ function sortBy(s) {
     
 
 }
-function order(opt) {
+function orderOp(opt) {
     if (opt == null) {
         return;
     }
@@ -1996,7 +1996,7 @@ var sortd, order, combinedRating;
 
 function sortNow() {
     if (sortd === "Imdb") {
-        if (order === "Decending") {  
+        if (order === "Descending") {  
             movies.sort((a, b) => {
                 return b.imdb.rating - a.imdb.rating;
             });
@@ -2011,16 +2011,16 @@ function sortNow() {
     else if (sortd === "Tomatoes") {
         if (order === "Ascending") {
             movies.sort((a, b) => {
-               console.log(a.tomatoes.viewer.rating - b.tomatoes.viewer.rating);
+               return a.tomatoes.viewer.rating - b.tomatoes.viewer.rating;
             });
-        } else if (order === "Decending") {
+        } else if (order === "Descending") {
             movies.sort((a, b) => {
                 return b.tomatoes.viewer.rating - a.tomatoes.viewer.rating;
             });
         }
     }
     else if (sortd === "CombinedRating") {
-        if (order === "Ascending") {
+        if (order === "Descending") {
             movies.forEach(a => {
                 a.comb_rate = a.imdb.rating + a.tomatoes.viewer.rating;
             });
@@ -2028,13 +2028,13 @@ function sortNow() {
                 return b.comb_rate - a.comb_rate;
             });
         }
-        else if (order === "Decending") {
+        else if (order === "Ascending") {
            
             movies.forEach(a => {
                 a.comb_rate = a.imdb.rating + a.tomatoes.viewer.rating;
             });
             movies.sort((a, b) => {
-                return b.comb_rate - a.comb_rate;
+                return a.comb_rate - b.comb_rate;
             });
         }
     }
