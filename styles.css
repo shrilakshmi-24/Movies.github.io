@@ -1,0 +1,32 @@
+body{
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+table{
+    width: 1000px;
+    margin: 0px auto;
+    background: #74c9f0;
+    text-align: center;   
+}
+th{
+    width: 200px;
+}
+td,th{
+    border: 1px solid rgb(240, 70, 70);
+}
+
+
+button{
+    width: 100%;
+    font-size: 15px;
+    font-weight: bold;
+    background: rgb(150, 150, 252);
+    color: rgb(19, 19, 19);
+    border: none;
+    height: 35px;
+    cursor: pointer;
+}
+.button td{
+    width: 200px;
+}
